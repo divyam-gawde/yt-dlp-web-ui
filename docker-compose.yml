@@ -2,10 +2,10 @@ services:
   yt-dlp-webui:
     image: marcobaobao/yt-dlp-webui
     ports:
-      - 3033:3033
+      - "3033:3033"
     volumes:
-      - <your dir>:/downloads # replace <your dir> with a directory on your host system
-      - <your dir>:/config    # directory where config.yml will be stored
+      - /home/leosmith/web/file.govpn.sbs/public_html/downloads:/downloads
+      - /home/leosmith/web/file.govpn.sbs/public_html/downloads/config:/config
     healthcheck:
       test: curl -f http://localhost:3033 || exit 1
     restart: unless-stopped
